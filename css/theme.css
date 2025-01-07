@@ -1,0 +1,328 @@
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* VARIABLES */
+:root {
+    --color-primary: #f5f5f5;
+    --color-secondary: #261b06;
+    --color-tertiary: #145214;
+    --color-highlight: #d4a373;
+
+    --bgcolor-primary: #203535;
+    --bgcolor-secondary: #fef6e4;
+    --bgcolor-tertiary: #94ac94;
+
+    --font-family-primary: 'Playfair Display', serif;
+    --font-family-secondary: 'Roboto', sans-serif;
+
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 4rem;
+}
+
+/* BASE STYLES */
+body {
+    font-family: var(--font-family-secondary);
+    background-color: var(--bgcolor-primary);
+    color: var(--color-primary);
+    padding: var(--spacing-small);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-primary);
+    font-family: var(--font-family-primary);
+}
+
+a {
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* HEADER */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background-color: var(--bgcolor-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-family: var(--font-family-primary);
+    color: var(--color-secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-small);
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* NAVIGATION */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background-color: var(--bgcolor-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-small);
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    color: var(--color-secondary);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-primary);
+    border-radius: 5px;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-image: url('/assets/espmartini--ls.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-primary);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-container h1 {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-small);
+    letter-spacing: 0.2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-container p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+.hero-container .btn {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-highlight);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-container .btn:hover {
+    transform: scale(1.1);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+
+/* ABOUT SECTION */
+.about {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+    background-color: var(--bgcolor-secondary);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-secondary);
+}
+
+.about-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* width: 100%; */
+}
+
+/* MENU SECTION */
+.menu {
+    padding: var(--spacing-large) var(--spacing-medium);
+    background-color: var(--bgcolor-primary);
+}
+
+.menu-container {
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+    margin-top: var(--spacing-medium);
+}
+
+.menu-item {
+    background-color: var(--bgcolor-secondary);
+    padding: var(--spacing-small);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+/* CONTACT SECTION */
+.contact {
+    padding: var(--spacing-large) var(--spacing-medium);
+    background-color: var(--bgcolor-secondary);
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-small);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: var(--color-highlight);
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* FOOTER */
+.footer {
+    padding: var(--spacing-small);
+    background-color: var(--bgcolor-primary);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.footer .social-links a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+}
